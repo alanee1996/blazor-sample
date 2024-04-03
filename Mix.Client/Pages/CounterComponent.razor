@@ -1,0 +1,26 @@
+<h3>Demo @handler</h3>
+<p>Counter : @count</p>
+<button class="btn btn-primary" @onclick="Increase">Increase</button>
+
+@code {
+    private int count = 0;
+    private string handler;
+    private void Increase()
+    {
+        count += 1;
+    }
+
+    protected override void OnInitialized()
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            handler = "WASM";
+        }
+        else
+        {
+            handler = "Server";
+        }
+        base.OnInitialized();
+    }
+
+}

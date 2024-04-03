@@ -1,0 +1,26 @@
+﻿@* @page "/" *@
+@* @using BlazorApp1.Services *@
+@* @inject IUserService UserService; *@
+@* *@
+@* <PageTitle>Home</PageTitle> *@
+@* *@
+@* <h1>Hello, world!</h1> *@
+@* *@
+@* Welcome to your new app. *@
+@* <input type="text" @bind="id"/> *@
+@* <h1>User Id: @_userModel?.Id</h1> *@
+@* <h1>User Name: @_userModel?.Name</h1> *@
+@* <button @onclick="GetUser">Click To Get User</button> *@
+@* *@
+@* @code { *@
+@*     private string? id { get; set; } *@
+@*     private UserModel? _userModel { get; set; } *@
+@* *@
+@*     private async Task GetUser() *@
+@*     { *@
+@*         if (!string.IsNullOrEmpty(id)) *@
+@*         { *@
+@*             _userModel = await UserService.GetUserById(id); *@
+@*         } *@
+@*     } *@
+@* } *@
